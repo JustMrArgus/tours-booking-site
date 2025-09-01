@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const slugify = require("slugify");
+const fs = require("fs");
+const { promisify } = require("util");
 
 const tourSchema = new mongoose.Schema(
   {
@@ -145,6 +147,20 @@ tourSchema.pre(/^find/, function (next) {
   });
 
   next();
+});
+
+tourSchema.post("findOneAndDelete", async function (doc) {
+  if (!doc) return;
+
+  const unlinkAsync = promisify(fs.unlink);
+
+  await unlinkAsync(`${__dirname}/../public/img/tours/${doc.imageCover}`);
+
+  await Promise.all(
+    doc.images.map((imageLink) =>
+      unlinkAsync(`${__dirname}/../public/img/tours/${imageLink}`)
+    )
+  );
 });
 
 const Tour = mongoose.model("Tour", tourSchema);

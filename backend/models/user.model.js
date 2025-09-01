@@ -2,6 +2,8 @@ const crypto = require("crypto");
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
+const fs = require("fs");
+const { promisify } = require("util");
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -105,6 +107,14 @@ userSchema.methods.createPasswordResetToken = function () {
 
   return resetToken;
 };
+
+userSchema.post("findOneAndDelete", async function (doc) {
+  if (!doc) return;
+
+  const unlinkAsync = promisify(fs.unlink);
+
+  await unlinkAsync(`${__dirname}/../public/img/users/${doc.photo}`);
+});
 
 const User = mongoose.model("User", userSchema);
 
