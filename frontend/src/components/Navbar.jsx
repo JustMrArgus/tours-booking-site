@@ -12,6 +12,9 @@ const Navbar = () => {
             <Link to="/tours">All Tours</Link>
           </li>
           <li className="cursor-pointer duration-200 hover:scale-110 hover:opacity-60">
+            <Link to="/about">About us</Link>
+          </li>
+          <li className="cursor-pointer duration-200 hover:scale-110 hover:opacity-60">
             <Link to="/login">Log in</Link>
           </li>
           <li className="cursor-pointer duration-200 hover:scale-110 border hover:text-[#444444] border-white rounded-full p-4 hover:bg-white relative">
@@ -22,6 +25,9 @@ const Navbar = () => {
         <ul className="flex gap-7 items-center">
           <li className="cursor-pointer duration-200 hover:scale-110 hover:opacity-60">
             <Link to="/tours">All Tours</Link>
+          </li>
+          <li className="cursor-pointer duration-200 hover:scale-110 hover:opacity-60">
+            <Link to="/about">About us</Link>
           </li>
           <li className="cursor-pointer duration-200 hover:scale-110 hover:opacity-60">
             <Link to="/user">Profile</Link>
