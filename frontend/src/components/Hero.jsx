@@ -9,7 +9,7 @@ const Hero = () => {
             Tour Booking Site
           </h1>
           <p className="text-[1.1rem] font-lato">
-            Your greatest superhero collection
+            Your best journey is waiting for you
           </p>
         </div>
       </div>

@@ -44,11 +44,11 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/api/auth", authRouter);
-app.use("/api/tours", tourRouter);
-app.use("/api/users", userRouter);
-app.use("/api/reviews", reviewRouter);
-app.use("/api/bookings", bookingRouter);
+app.use("/auth", authRouter);
+app.use("/tours", tourRouter);
+app.use("/users", userRouter);
+app.use("/reviews", reviewRouter);
+app.use("/bookings", bookingRouter);
 
 app.use((req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
