@@ -3,7 +3,6 @@ import TourCard from "./TourCard";
 
 const TourCards = () => {
   const [tours, setTours] = useState([]);
-  console.log(tours);
 
   useEffect(() => {
     fetch("/api/tours?limit=4")
@@ -32,8 +31,9 @@ const TourCards = () => {
               price={tour.price}
               ratingsAverage={tour.ratingsAverage}
               maxGroupSize={tour.maxGroupSize}
-              ratingsQuanity={tour.ratingsQuanity}
+              ratingsQuanity={tour.ratingsQuantity}
               imageCoverName={tour.imageCover}
+              slug={tour.slug}
             />
           ))}
         </div>
