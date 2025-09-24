@@ -5,7 +5,7 @@ const MainPage = () => {
   return (
     <div className="bg-[#f7f7f7]">
       <Hero />
-      <TourCards />
+      <TourCards limit={4} />
     </div>
   );
 };

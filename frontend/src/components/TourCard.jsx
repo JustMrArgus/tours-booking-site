@@ -70,18 +70,24 @@ const TourCard = ({
         <div className="flex justify-between items-center mt-5 px-10 py-6 bg-[#e9e8e8]">
           <div className="flex flex-col gap-1">
             <p>
-              <span className="font-bold text-[0.9rem]">${price}</span>{" "}
+              <span className="font-bold text-[0.9rem] opacity-60">
+                ${price}
+              </span>{" "}
               <span className="opacity-45">per person</span>
             </p>
             <p>
-              <span className="font-bold text-[0.9rem]">{ratingsAverage}</span>{" "}
+              <span className="font-bold text-[0.9rem] opacity-60">
+                {ratingsAverage}
+              </span>{" "}
               <span className="opacity-45">rating({ratingsQuanity})</span>
             </p>
           </div>
           <div>
-            <button className="bg-linear-to-r text-white from-green-500 to-green-300 p-6 rounded-[2rem] cursor-pointer duration-200 hover:scale-[1.1] hover:shadow-md">
-              <Link to={`tours/${slug}`}>DETAILS</Link>
-            </button>
+            <Link to={`tours/${slug}`}>
+              <button className="bg-linear-to-r text-white from-green-500 to-green-300 p-6 rounded-[2rem] cursor-pointer duration-200 hover:scale-[1.1] hover:shadow-md">
+                DETAILS
+              </button>
+            </Link>
           </div>
         </div>
       </div>
