@@ -1,5 +1,11 @@
+import NotFoundMessage from "../components/NotFoundMessage";
+
 const NotFoundPage = () => {
-  return <div>NotFoundPage</div>;
+  return (
+    <div className="bg-[#f7f7f7]">
+      <NotFoundMessage />
+    </div>
+  );
 };
 
 export default NotFoundPage;

@@ -7,7 +7,6 @@ import UserPage from "./pages/UserPage";
 import ToursPage from "./pages/ToursPage";
 import TourPage from "./pages/TourPage";
 import MainPage from "./pages/MainPage";
-import AdminPage from "./pages/AdminPage";
 import AboutUsPage from "./pages/AboutUsPage";
 
 const App = () => {
@@ -19,7 +18,6 @@ const App = () => {
           <Route path="/tours" element={<ToursPage />} />
           <Route path="/tours/:id" element={<TourPage />} />
           <Route path="/user" element={<UserPage />} />
-          <Route path="/admin" element={<AdminPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/about" element={<AboutUsPage />} />

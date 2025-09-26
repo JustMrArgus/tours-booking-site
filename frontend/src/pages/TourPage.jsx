@@ -1,5 +1,5 @@
 const TourPage = () => {
-  return <div>TourPage</div>;
+  return <div className="bg-[#f7f7f7]">TourPage</div>;
 };
 
 export default TourPage;
